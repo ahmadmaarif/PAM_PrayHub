@@ -13,19 +13,19 @@ memberikan dukungan spiritual satu sama lain.
 **Use Case**
 ![image](https://github.com/ahmadmaarif/PAM_PrayHub/assets/115221633/74e1f377-8d40-40cb-b907-d2f0159b83eb)
 
-1. Tambahkan Doa
+1. Tambahkan Doa:
 Pengguna dapat menambahkan doa dan harapannya agar orang lain dapat melihatnya
-2. Tampilkan Doa
+3. Tampilkan Doa:
 Pengguna menampilkan doa-doa yang telah ditambahkan
-3.  Koreksi Doa
+4.  Koreksi Doa:
 pengguna dapat mengedit/ menyempurnan doa dan harapannya
-4. Hapus Doa
+5. Hapus Doa:
 Pengguna dapat menghapus doa yang sudah ada
-5. Merespon Doa
+6. Merespon Doa:
 Pengguna dapat merespon doa  yang ada di laman tampilan
-6. SignUp
+7. SignUp:
 Pengguna melakukan pembuatan akun User
-7. Login 
+8. Login:
 Pengguna masuk kedalam aplikasi mengunakan akun yang telah dibuat pada signup
-8. LogOut
+9. LogOut:
 Pengguna keluar dari akun setelah melakukan aktifitasnya
