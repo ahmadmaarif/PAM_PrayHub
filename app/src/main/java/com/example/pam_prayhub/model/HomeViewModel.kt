@@ -2,8 +2,8 @@ package com.example.pam_prayhub.model
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.pam_prayhub.data.Doa
 import com.example.pam_prayhub.repositori.RepositoriDoa
-
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.filterNotNull
@@ -23,6 +23,6 @@ class HomeViewModel(private val repositoriDoa: RepositoriDoa) : ViewModel() {
         )
 
     data class HomeUiState(
-        val listSiswa: List<Siswa> = listOf()
+        val listSiswa: List<Doa> = listOf()
     )
 }
