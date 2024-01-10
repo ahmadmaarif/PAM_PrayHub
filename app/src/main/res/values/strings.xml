@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">PAM_PrayHub</string>
     <string name="entry_doa">Tambah Doa</string>
+    <string name="deskripsi_no_item">Tidak ada data doa. Tap + untuk menambah data</string>
     <string name="judul">Judul</string>
     <string name="isi">Isi</string>
     <string name="tanggal">Tanggal</string>

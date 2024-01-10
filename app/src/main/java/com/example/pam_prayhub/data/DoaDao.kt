@@ -12,17 +12,17 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface DoaDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertSiswa(siswa: Doa)
+    suspend fun insertDoa(doa: Doa)
 
     @Update
-    suspend fun updateSiswa(siswa: Doa)
+    suspend fun updateDoa(doa: Doa)
 
     @Delete
-    suspend fun deleteSiswa(siswa: Doa)
+    suspend fun deleteDoa(doa: Doa)
 
     @Query("SELECT * from tbldoa WHERE id = :id")
-    fun getSiswa (id: Int): Flow<Doa>
+    fun getDoa (id: Int): Flow<Doa>
 
     @Query("SELECT * from tblDoa ORDER BY judul ASC")
-    fun getAllSiswa (): Flow<List<Doa>>
+    fun getAllDoa (): Flow<List<Doa>>
 }

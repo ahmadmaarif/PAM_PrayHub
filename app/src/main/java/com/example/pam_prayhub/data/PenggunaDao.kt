@@ -12,17 +12,17 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface PenggunaDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertSiswa(siswa: Pengguna)
+    suspend fun insertPengguna(pengguna: Pengguna)
 
     @Update
-    suspend fun updateSiswa(siswa: Pengguna)
+    suspend fun updatePengguna(pengguna: Pengguna)
 
     @Delete
-    suspend fun deleteSiswa(siswa: Pengguna)
+    suspend fun deletePengguna(pengguna: Pengguna)
 
     @Query("SELECT * from tblPengguna WHERE id = :id")
-    fun getSiswa (id: Int): Flow<Pengguna>
+    fun getPengguna (id: Int): Flow<Pengguna>
 
     @Query("SELECT * from tblPengguna ORDER BY nama ASC")
-    fun getAllSiswa (): Flow<List<Pengguna>>
+    fun getAllPengguna (): Flow<List<Pengguna>>
 }

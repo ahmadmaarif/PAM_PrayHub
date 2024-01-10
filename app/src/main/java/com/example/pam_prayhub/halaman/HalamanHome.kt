@@ -69,7 +69,7 @@ fun DoaHomeScreen(
             ) {
                 Icon(
                     imageVector = Icons.Default.Add,
-                    contentDescription = stringResource(id = R.string.)
+                    contentDescription = stringResource(id = R.string.entry_doa)
                 )
             }
         }
@@ -79,8 +79,8 @@ fun DoaHomeScreen(
             modifier = Modifier
                 .padding(innerPadding)
                 .fillMaxSize(),
-            itemSiswa = uiStateDoa.listSiswa,
-            onSiswaClick =  onDetailClick
+            itemDoa = uiStateDoa.listDoa,
+            onDoaClick =  onDetailClick
 
         )
     }
@@ -89,20 +89,20 @@ fun DoaHomeScreen(
 @Composable
 fun BodyHome(
     modifier: Modifier,
-    itemSiswa: List<Doa>,
-    onSiswaClick : (Int) -> Unit = {}
+    itemDoa: List<Doa>,
+    onDoaClick : (Int) -> Unit = {}
 ) {
     Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = modifier) {
-        if (itemSiswa.isEmpty()) {
+        if (itemDoa.isEmpty()) {
             Text(
                 text = stringResource(R.string.deskripsi_no_item),
                 textAlign = TextAlign.Center, style = MaterialTheme.typography.titleLarge
             )
         } else {
             ListDoa(
-                itemSiswa = itemSiswa,
+                itemDoa = itemDoa,
                 modifier = Modifier.padding(horizontal = dimensionResource(id = R.dimen.padding_small)),
-                onItemClick = {onSiswaClick(it.id)}
+                onItemClick = {onDoaClick(it.id)}
             )
         }
     }
@@ -110,12 +110,12 @@ fun BodyHome(
 
 @Composable
 fun ListDoa(
-    itemSiswa: List<Doa>,
+    itemDoa: List<Doa>,
     modifier: Modifier = Modifier,
     onItemClick: (Doa) -> Unit
 ) {
     LazyColumn(modifier = Modifier) {
-        items(items = itemSiswa, key = { it.id }) { person ->
+        items(items = itemDoa, key = { it.id }) { person ->
             DataDoa(
                 doa = person,
                 modifier = Modifier.padding(dimensionResource(id = R.dimen.padding_small))
