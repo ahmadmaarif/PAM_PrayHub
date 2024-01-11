@@ -3,26 +3,30 @@ package com.example.pam_prayhub.model
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.pam_prayhub.halaman.DetailDestination
+import com.example.pam_prayhub.repositori.RepositoriDoa
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.filterNotNull
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.stateIn
 
 class DetailsViewModel (
     savedStateHandle: SavedStateHandle,
-    private val repositoriDoa: RepositoriDoa: Rep
-
+    private val repositoriDoa: RepositoriDoa
 ): ViewModel() {
-    private val DoaID: Int = checkNotNull(savedStateHandle[DetailDestination.siswaIdArg])
+    private val DoaID: Int = checkNotNull(savedStateHandle[DetailDestination.doaIdArg])
     val uiState: StateFlow<ItemDetailsUiState> =
-        repositoriDoa.getSiswaStream(DoaID).filterNotNull().map {
-            ItemDetailsUiState(detailSiswa = it.toDetailSiswa())
+        repositoriDoa.getDoaStream(DoaID).filterNotNull().map {
+            ItemDetailsUiState(detailDoa = it.toDetailDoa())
         }.stateIn(
             scope = viewModelScope,
             started = SharingStarted.WhileSubscribed(TIMEOUT_MILLIS),
             initialValue = ItemDetailsUiState()
         )
 
-    suspend fun deleteItem() {
-        repositoriDoa.deleteSiswa(uiState.value.detailSiswa.toSiswa())
+    suspend fun deleteDoa() {
+        repositoriDoa.deleteDoa(uiState.value.detailDoa.toDoa())
     }
 
     companion object {
@@ -31,5 +35,5 @@ class DetailsViewModel (
 }
 data class ItemDetailsUiState (
     val outOfStock : Boolean = true,
-    val detailSiswa : DetailDoa = DetailDoa(),
+    val detailDoa : DetailDoa = DetailDoa(),
 )

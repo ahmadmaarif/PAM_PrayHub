@@ -11,7 +11,7 @@ data class Doa(
     val judul: String,
     val isi: String,
     val tanggal: String,
-    val id_penggunaFK: String
+
 )
 
 

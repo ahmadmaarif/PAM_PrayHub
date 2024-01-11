@@ -6,4 +6,6 @@
     <string name="isi">Isi</string>
     <string name="tanggal">Tanggal</string>
     <string name="id_penggunaFK">Id Pengguna</string>
+    <string name="detail_doa">Detail Doa</string>
+
 </resources>
