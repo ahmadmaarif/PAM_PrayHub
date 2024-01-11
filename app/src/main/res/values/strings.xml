@@ -7,5 +7,6 @@
     <string name="tanggal">Tanggal</string>
     <string name="id_penggunaFK">Id Pengguna</string>
     <string name="detail_doa">Detail Doa</string>
+    <string name="edit_doa">Edit Doa</string>
 
 </resources>
