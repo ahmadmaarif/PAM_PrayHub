@@ -16,7 +16,7 @@ import com.example.pam_prayhub.navigasi.DoaTopAppBar
 
 import kotlinx.coroutines.launch
 
-object ItemEditDestination : DestinasiNavigasi {
+object DoaItemEditDestination : DestinasiNavigasi {
     override val route = "item_edit"
     override val titleRes = R.string.edit_doa
     const val itemIdArg = "itemId"
@@ -25,7 +25,7 @@ object ItemEditDestination : DestinasiNavigasi {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ItemEditScreen(
+fun DoaItemEditScreen(
     navigateBack: () -> Unit,
     onNavigateUp: () ->Unit,
     modifier: Modifier = Modifier,
@@ -35,7 +35,7 @@ fun ItemEditScreen(
     Scaffold (
         topBar = {
             DoaTopAppBar(
-                title = stringResource(ItemEditDestination.titleRes),
+                title = stringResource(DoaItemEditDestination.titleRes),
                 canNavigateBack =  true,
                 navigateUp = onNavigateUp
             )

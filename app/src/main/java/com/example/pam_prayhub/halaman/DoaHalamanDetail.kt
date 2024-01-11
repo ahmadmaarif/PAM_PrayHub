@@ -13,7 +13,7 @@ import com.example.pam_prayhub.model.DetailsViewModel
 import com.example.pam_prayhub.model.PenyediaViewModel
 import com.example.pam_prayhub.navigasi.DestinasiNavigasi
 
-object DetailDestination : DestinasiNavigasi {
+object DoaDetailDestination : DestinasiNavigasi {
     override val route = "item_details"
     override val titleRes = R.string.detail_doa
     const val doaIdArg = "itemId"
@@ -22,7 +22,7 @@ object DetailDestination : DestinasiNavigasi {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DetailScreen(
+fun DoaHalamanDetail(
     navigateToEditItem: (Int) -> Unit,
     navigateBack: () -> Unit,
     modifier: Modifier = Modifier,
