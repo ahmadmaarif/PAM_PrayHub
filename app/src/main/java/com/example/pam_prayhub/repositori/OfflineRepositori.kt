@@ -2,22 +2,41 @@ package com.example.pam_prayhub.repositori
 
 import com.example.pam_prayhub.data.Doa
 import com.example.pam_prayhub.data.DoaDao
+import com.example.pam_prayhub.data.Pengguna
+import com.example.pam_prayhub.data.PenggunaDao
 import kotlinx.coroutines.flow.Flow
 
-class OfflineRepositoriDoa(private val doaDao: DoaDao):RepositoriDoa{
-    override fun getAllADoaStream(): Flow<List<Doa>> {
-        return doaDao.getDoa()
+class OfflineRepositoriPengguna(
+    private val penggunaDao: PenggunaDao
+) : RepositoriPengguna {
+    override fun getAllPenggunaStream(): Flow<List<Pengguna>> {
+        return penggunaDao.getAllPengguna()
     }
 
-    override fun getDoaStream(id: Int): Flow<Doa?> = DoaDao.getDoa(id)
+    override fun getPenggunaStream(id: Int): Flow<Pengguna?>  = penggunaDao.getPengguna(id)
+
+    override suspend fun insertPengguna(pengguna: Pengguna) {
+        penggunaDao.insertPengguna(pengguna)
+    }
+
+    override suspend fun deletePengguna(pengguna: Pengguna) =penggunaDao.deletePengguna(pengguna)
+
+    override suspend fun updatePengguna(pengguna: Pengguna) = penggunaDao.updatePengguna(pengguna)
+
+}
+
+class OfflineRepositoriDoa(private val doaDao: DoaDao):RepositoriDoa{
+    override fun getAllDoaStream(): Flow<List<Doa>> {
+        return doaDao.getAllDoa()    }
+
+    override fun getDoaStream(id: Int): Flow<Doa?> = doaDao.getDoa(id)
 
     override suspend fun insertDoa(doa: Doa) {
-        DoaDao.insertDoa(doa)
+        doaDao.insertDoa(doa)
     }
 
-    override suspend fun deleteDoa(doa: Doa) = DoaDao.deleteDoa(doa)
+    override suspend fun deleteDoa(doa: Doa) = doaDao.deleteDoa(doa  )
 
-    override suspend fun updateDoa(doa: Doa) = DoaDao.updateDoa(doa)
-
+    override suspend fun updateDoa(doa: Doa) = doaDao.updateDoa(doa)
 
 }

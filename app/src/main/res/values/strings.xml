@@ -8,5 +8,16 @@
     <string name="id_penggunaFK">Id Pengguna</string>
     <string name="detail_doa">Detail Doa</string>
     <string name="edit_doa">Edit Doa</string>
+    <string name="back">Back</string>
+    <string name="btn_submit">Submit</string>
+    <string name="required_field">* required fields</string>
+    <string name="attention">Perhatian</string>
+    <string name="update">Edit</string>
+    <string name="delete">Hapus</string>
+    <string name="yes">Ya</string>
+    <string name="no">Tidak</string>
+
+
+
 
 </resources>

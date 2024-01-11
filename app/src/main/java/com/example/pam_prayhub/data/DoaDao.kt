@@ -20,7 +20,7 @@ interface DoaDao {
     @Delete
     suspend fun deleteDoa(doa: Doa)
 
-    @Query("SELECT * from tbldoa WHERE id = :id")
+    @Query("SELECT * from tblDoa WHERE id = :id")
     fun getDoa (id: Int): Flow<Doa>
 
     @Query("SELECT * from tblDoa ORDER BY judul ASC")

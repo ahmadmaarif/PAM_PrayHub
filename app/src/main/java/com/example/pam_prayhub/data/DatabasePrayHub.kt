@@ -17,7 +17,7 @@ abstract class DatabasePrayHub : RoomDatabase() {
 
         fun getDatabase(context: Context): DatabasePrayHub {
             return (Instance ?: synchronized(this) {
-                Room.databaseBuilder(context, DatabasePrayHub::class.java, "PrayHub_database")
+                Room.databaseBuilder(context, DatabasePrayHub::class.java, "DatabasePrayHub")
                     .build().also { Instance = it }
             })
         }

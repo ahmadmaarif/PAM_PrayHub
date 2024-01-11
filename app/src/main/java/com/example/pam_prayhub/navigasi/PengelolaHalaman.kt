@@ -18,6 +18,14 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.madoora.R
+import com.example.pam_prayhub.halaman.DestinasiEntry
+import com.example.pam_prayhub.halaman.DestinasiHome
+import com.example.pam_prayhub.halaman.DetailDestination
+import com.example.pam_prayhub.halaman.DetailScreen
+import com.example.pam_prayhub.halaman.DoaHomeScreen
+import com.example.pam_prayhub.halaman.EntryDoaScreen
+import com.example.pam_prayhub.halaman.ItemEditDestination
+import com.example.pam_prayhub.halaman.ItemEditScreen
 
 @Composable
 fun DoaApp(navController: NavHostController = rememberNavController()) {
@@ -61,7 +69,7 @@ fun HostNavigasi(
         modifier = Modifier
     ) {
         composable(DestinasiHome.route) {
-            HomeScreen(
+            DoaHomeScreen(
                 navigateToItemEntry = { navController.navigate(DestinasiEntry.route) },
                 onDetailClick = { itemId ->
                     navController.navigate("${DetailDestination.route}/$itemId")
@@ -69,16 +77,16 @@ fun HostNavigasi(
             )
         }
         composable(DestinasiEntry.route) {
-            EntrySiswaScreen(navigateBack = { navController.popBackStack() })
+            EntryDoaScreen(navigateBack = { navController.popBackStack() })
         }
 
         composable(
             DetailDestination.routeWithArgs,
-            arguments = listOf(navArgument(DetailDestination.siswaIdArg) {
+            arguments = listOf(navArgument(DetailDestination.doaIdArg) {
                 type = NavType.IntType
             })
         ) { backStackEntry ->
-            val itemId = backStackEntry.arguments?.getInt(DetailDestination.siswaIdArg)
+            val itemId = backStackEntry.arguments?.getInt(DetailDestination.doaIdArg)
             itemId?.let {
                 DetailScreen(
                     navigateBack = { navController.popBackStack() },

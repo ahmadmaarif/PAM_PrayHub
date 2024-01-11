@@ -9,7 +9,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.madoora.R
+import com.example.pam_prayhub.model.EditViewModel
+import com.example.pam_prayhub.model.PenyediaViewModel
 import com.example.pam_prayhub.navigasi.DestinasiNavigasi
+import com.example.pam_prayhub.navigasi.DoaTopAppBar
 
 import kotlinx.coroutines.launch
 
@@ -31,7 +34,7 @@ fun ItemEditScreen(
     val coroutineScope = rememberCoroutineScope()
     Scaffold (
         topBar = {
-            SiswaTopAppBar(
+            DoaTopAppBar(
                 title = stringResource(ItemEditDestination.titleRes),
                 canNavigateBack =  true,
                 navigateUp = onNavigateUp
@@ -39,12 +42,12 @@ fun ItemEditScreen(
         },
         modifier = modifier
     ){ innerPadding ->
-        EntrySiswaBody(
-            uiStateSiswa = viewModel.siswaUiState,
-            onSiswaValueChange = viewModel::updateUiState,
+        EntryDoaBody(
+            uiStateDoa = viewModel.doaUiState,
+            onDoaValueChange = viewModel::updateUiState,
             onSaveClick = {
                 coroutineScope.launch {
-                    viewModel.updateSiswa()
+                    viewModel.updateDoa()
                     navigateBack()
                 }
             },
