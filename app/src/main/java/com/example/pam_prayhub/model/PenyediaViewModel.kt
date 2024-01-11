@@ -19,10 +19,10 @@ object PenyediaViewModel {
         }
 
         initializer {
-            DetailsViewModel(createSavedStateHandle(), aplikasiPrayHub().container.repositoriDoa)
+            DoaDetailsViewModel(createSavedStateHandle(), aplikasiPrayHub().container.repositoriDoa)
         }
         initializer {
-            DetailsViewModel(
+            DoaDetailsViewModel(
                 createSavedStateHandle(),
                 aplikasiPrayHub().container.repositoriDoa,
             )

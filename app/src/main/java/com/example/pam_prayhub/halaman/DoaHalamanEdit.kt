@@ -8,7 +8,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.madoora.R
+import com.example.pam_prayhub.R
 import com.example.pam_prayhub.model.EditViewModel
 import com.example.pam_prayhub.model.PenyediaViewModel
 import com.example.pam_prayhub.navigasi.DestinasiNavigasi
@@ -42,7 +42,7 @@ fun DoaItemEditScreen(
         },
         modifier = modifier
     ){ innerPadding ->
-        EntryDoaBody(
+        DoaEntryBody(
             uiStateDoa = viewModel.doaUiState,
             onDoaValueChange = viewModel::updateUiState,
             onSaveClick = {

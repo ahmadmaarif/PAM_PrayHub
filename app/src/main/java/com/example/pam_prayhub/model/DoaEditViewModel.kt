@@ -6,7 +6,8 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.pam_prayhub.halaman.ItemEditDestination
+import com.example.pam_prayhub.halaman.DoaItemEditDestination
+
 import com.example.pam_prayhub.repositori.RepositoriDoa
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.first
@@ -20,7 +21,7 @@ class EditViewModel (
     var doaUiState by mutableStateOf(UIStateDoa())
         private set
 
-    private val itemId: Int = checkNotNull(savedStateHandle[ItemEditDestination.itemIdArg])
+    private val itemId: Int = checkNotNull(savedStateHandle[DoaItemEditDestination.itemIdArg])
 
     init {
         viewModelScope.launch {

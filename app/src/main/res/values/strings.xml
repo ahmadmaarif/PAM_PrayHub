@@ -5,7 +5,6 @@
     <string name="judul">Judul</string>
     <string name="isi">Isi</string>
     <string name="tanggal">Tanggal</string>
-    <string name="id_penggunaFK">Id Pengguna</string>
     <string name="detail_doa">Detail Doa</string>
     <string name="edit_doa">Edit Doa</string>
     <string name="back">Back</string>
@@ -16,7 +15,6 @@
     <string name="delete">Hapus</string>
     <string name="yes">Ya</string>
     <string name="no">Tidak</string>
-    <string name="detail_pengguna">Detail Pengguna</string>
 
 
 

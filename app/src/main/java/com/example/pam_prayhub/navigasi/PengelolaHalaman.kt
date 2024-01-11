@@ -17,18 +17,18 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.example.madoora.R
+import com.example.pam_prayhub.R
 import com.example.pam_prayhub.halaman.DestinasiEntry
 import com.example.pam_prayhub.halaman.DestinasiHome
-import com.example.pam_prayhub.halaman.DetailDestination
-import com.example.pam_prayhub.halaman.DetailScreen
+import com.example.pam_prayhub.halaman.DoaDetailDestination
+import com.example.pam_prayhub.halaman.DoaDetailScreen
+import com.example.pam_prayhub.halaman.DoaEntryScreen
 import com.example.pam_prayhub.halaman.DoaHomeScreen
-import com.example.pam_prayhub.halaman.EntryDoaScreen
-import com.example.pam_prayhub.halaman.ItemEditDestination
-import com.example.pam_prayhub.halaman.ItemEditScreen
+import com.example.pam_prayhub.halaman.DoaItemEditDestination
+import com.example.pam_prayhub.halaman.DoaItemEditScreen
 
 @Composable
-fun DoaApp(navController: NavHostController = rememberNavController()) {
+fun PrayHubApp(navController: NavHostController = rememberNavController()) {
     HostNavigasi(navController = navController)
 }
 
@@ -72,36 +72,36 @@ fun HostNavigasi(
             DoaHomeScreen(
                 navigateToItemEntry = { navController.navigate(DestinasiEntry.route) },
                 onDetailClick = { itemId ->
-                    navController.navigate("${DetailDestination.route}/$itemId")
+                    navController.navigate("${DoaDetailDestination.route}/$itemId")
                 },
             )
         }
         composable(DestinasiEntry.route) {
-            EntryDoaScreen(navigateBack = { navController.popBackStack() })
+            DoaEntryScreen(navigateBack = { navController.popBackStack() })
         }
 
         composable(
-            DetailDestination.routeWithArgs,
-            arguments = listOf(navArgument(DetailDestination.doaIdArg) {
+            DoaDetailDestination.routeWithArgs,
+            arguments = listOf(navArgument(DoaDetailDestination.doaIdArg) {
                 type = NavType.IntType
             })
         ) { backStackEntry ->
-            val itemId = backStackEntry.arguments?.getInt(DetailDestination.doaIdArg)
+            val itemId = backStackEntry.arguments?.getInt(DoaDetailDestination.doaIdArg)
             itemId?.let {
-                DetailScreen(
+                DoaDetailScreen(
                     navigateBack = { navController.popBackStack() },
-                    navigateToEditItem = { navController.navigate("${ItemEditDestination.route}/$it") }
+                    navigateToEditItem = { navController.navigate("${DoaItemEditDestination.route}/$it") }
                 )
             }
         }
 
         composable(
-            ItemEditDestination.routeWithArgs,
-            arguments = listOf(navArgument(ItemEditDestination.itemIdArg) {
+            DoaItemEditDestination.routeWithArgs,
+            arguments = listOf(navArgument(DoaItemEditDestination.itemIdArg) {
                 type = NavType.IntType
             })
         ) {
-            ItemEditScreen(navigateBack = { navController.popBackStack() },
+            DoaItemEditScreen(navigateBack = { navController.popBackStack() },
                 onNavigateUp = { navController.navigateUp() })
         }
 

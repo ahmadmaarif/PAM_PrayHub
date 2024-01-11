@@ -2,28 +2,8 @@ package com.example.pam_prayhub.repositori
 
 import com.example.pam_prayhub.data.Doa
 import com.example.pam_prayhub.data.DoaDao
-import com.example.pam_prayhub.data.Pengguna
-import com.example.pam_prayhub.data.PenggunaDao
 import kotlinx.coroutines.flow.Flow
 
-class OfflineRepositoriPengguna(
-    private val penggunaDao: PenggunaDao
-) : RepositoriPengguna {
-    override fun getAllPenggunaStream(): Flow<List<Pengguna>> {
-        return penggunaDao.getAllPengguna()
-    }
-
-    override fun getPenggunaStream(id: Int): Flow<Pengguna?>  = penggunaDao.getPengguna(id)
-
-    override suspend fun insertPengguna(pengguna: Pengguna) {
-        penggunaDao.insertPengguna(pengguna)
-    }
-
-    override suspend fun deletePengguna(pengguna: Pengguna) =penggunaDao.deletePengguna(pengguna)
-
-    override suspend fun updatePengguna(pengguna: Pengguna) = penggunaDao.updatePengguna(pengguna)
-
-}
 
 class OfflineRepositoriDoa(private val doaDao: DoaDao):RepositoriDoa{
     override fun getAllDoaStream(): Flow<List<Doa>> {

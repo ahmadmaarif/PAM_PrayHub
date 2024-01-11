@@ -5,10 +5,10 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [Doa::class], [Pengguna::class], version = 1, exportSchema = false)
+@Database(entities = [Doa::class],  version = 1, exportSchema = false)
 abstract class DatabasePrayHub : RoomDatabase() {
-        abstract fun DoaDao(): DoaDao
-        abstract fun PenggunaDao(): PenggunaDao
+        abstract fun doaDao(): DoaDao
+
 
 
     companion object {

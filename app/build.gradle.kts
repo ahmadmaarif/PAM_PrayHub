@@ -8,11 +8,11 @@ plugins {
 
 
 android {
-    namespace = "com.example.madoora"
+    namespace = "com.example.pam_prayhub"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.madoora"
+        applicationId = "com.example.pam_prayhub"
         minSdk = 24
         targetSdk = 33
         versionCode = 1

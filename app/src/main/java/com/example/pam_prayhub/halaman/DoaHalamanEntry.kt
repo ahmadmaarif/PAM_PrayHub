@@ -23,7 +23,7 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.madoora.R
+import com.example.pam_prayhub.R
 import com.example.pam_prayhub.model.DetailDoa
 import com.example.pam_prayhub.model.EntryViewModel
 import com.example.pam_prayhub.model.PenyediaViewModel
@@ -40,7 +40,7 @@ object DestinasiEntry : DestinasiNavigasi {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun EntryDoaScreen(
+fun DoaEntryScreen(
     navigateBack: () -> Unit,
     modifier: Modifier = Modifier,
     viewModel: EntryViewModel = viewModel(factory = PenyediaViewModel.Factory)
@@ -57,7 +57,7 @@ fun EntryDoaScreen(
             )
         }
     ) { innerPadding ->
-        EntryDoaBody(
+        DoaEntryBody(
             uiStateDoa = viewModel.uiStateDoa,
             onDoaValueChange = viewModel::updateUiState,
             onSaveClick = {
@@ -75,7 +75,7 @@ fun EntryDoaScreen(
 }
 
 @Composable
-fun EntryDoaBody(
+fun DoaEntryBody(
     uiStateDoa: UIStateDoa,
     onDoaValueChange: (DetailDoa) -> Unit,
     onSaveClick: () -> Unit,
@@ -85,7 +85,7 @@ fun EntryDoaBody(
         verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_large)),
         modifier = modifier.padding(dimensionResource(id = R.dimen.padding_medium))
     ) {
-        FormInputDoa(
+        DoaFormInput(
             detailDoa = uiStateDoa.detailDoa,
             onValueChange = onDoaValueChange,
             modifier = Modifier.fillMaxWidth()
@@ -103,7 +103,7 @@ fun EntryDoaBody(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun FormInputDoa(
+fun DoaFormInput(
     detailDoa: DetailDoa,
     modifier: Modifier = Modifier,
     onValueChange: (DetailDoa) -> Unit = {},

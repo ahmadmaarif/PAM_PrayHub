@@ -8,8 +8,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.madoora.R
-import com.example.pam_prayhub.model.DetailsViewModel
+import com.example.pam_prayhub.R
+import com.example.pam_prayhub.model.DoaDetailsViewModel
 import com.example.pam_prayhub.model.PenyediaViewModel
 import com.example.pam_prayhub.navigasi.DestinasiNavigasi
 
@@ -22,11 +22,11 @@ object DoaDetailDestination : DestinasiNavigasi {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DoaHalamanDetail(
+fun DoaDetailScreen(
     navigateToEditItem: (Int) -> Unit,
     navigateBack: () -> Unit,
     modifier: Modifier = Modifier,
-    viewModel: DetailsViewModel = viewModel(factory = PenyediaViewModel.Factory)
+    viewModel: DoaDetailsViewModel= viewModel(factory = PenyediaViewModel.Factory)
 ) {
 
 }

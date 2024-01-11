@@ -33,7 +33,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.madoora.R
+import com.example.pam_prayhub.R
 import com.example.pam_prayhub.data.Doa
 import com.example.pam_prayhub.model.HomeViewModel
 import com.example.pam_prayhub.navigasi.DestinasiNavigasi

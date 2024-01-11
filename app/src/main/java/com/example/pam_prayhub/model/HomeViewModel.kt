@@ -21,8 +21,7 @@ class HomeViewModel(private val repositoriDoa: RepositoriDoa) : ViewModel() {
                 TIMEOUT_MILLIS
             ), initialValue = HomeUiState()
         )
-
-    data class HomeUiState(
-        val listDoa: List<Doa> = listOf()
-    )
 }
+data class HomeUiState(
+    val listDoa: List<Doa> = listOf()
+)
